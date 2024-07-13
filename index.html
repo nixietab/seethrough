@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Document metadata -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title of the webpage -->
+    <title>Self-Displaying Code Background</title>
+    <!-- External CSS stylesheets -->
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.28.0/themes/prism-okaidia.min.css" rel="stylesheet" />
+    <link href="simple.css" rel="stylesheet" type="text/css" media="all">
+  </head>
+  <body>
+    <!-- Pre tag to display highlighted HTML code -->
+    <pre class="code-background" id="code-display"></pre>
+    <!-- Main content of the webpage -->
+    <div class=box>
+      <!-- Main heading -->
+      <h1>Seetrough experiment!</h1>
+      <!-- Description of the experiment -->
+      <p>I always liked the old clearcraze tech and i had the idea to implement it into a website, idk is kinda cool</p>
+      <p>About this style:</p>
+      <ul>
+        <!-- Explanation of clear craze in product design -->
+        <p>Clear craze in product design is all about stuff you can see through,
+        like the see-through Game Boy or those calculators you can peek inside. 
+        It's cool because you get to check out what's going on inside while using it.</p>
+      </ul>
+      <!-- Link to go back to experiments -->
+      <p>
+        <a href="https://github.com/nixietab/seethrough">github</a>
+        <br>
+        <a href="/exp">go back to experiments</a>
+      </p>
+    </div>
+    <!-- External JavaScript libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.28.0/prism.min.js"></script>
+    <script>
+      // JavaScript code to fetch and highlight the HTML content
+      document.addEventListener('DOMContentLoaded', () => {
+        fetch(window.location.href).then(response => response.text()).then(html => {
+          const codeDisplay = document.getElementById('code-display');
+          codeDisplay.innerHTML = Prism.highlight(html, Prism.languages.html, 'html');
+        }).catch(error => {
+          console.error('Error fetching the HTML:', error);
+        });
+      });
+    </script>
+    <!-- Just a comment -->
+    <!-- literally just a comment lol -->
+  </body>
+</html>
